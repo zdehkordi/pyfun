@@ -3,7 +3,7 @@ from typing import TypeVar, Generic
 
 T = TypeVar('T')
 
-class array:
+class array(Generic[T]):
     """dum arrays!"""
     def __init__(self, cls: type[T], length: int) -> None:
         self.__data: list[T] = [cls()] * length
