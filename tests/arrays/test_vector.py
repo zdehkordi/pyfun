@@ -11,12 +11,9 @@ def test_get_length_of_array():
     a = array(int, 1)
     assert a.length == 1
 
-def test_get_val_of_array():
+def test_get_and_set_val_of_array():
     a = array(int, 1)
     assert a[0] == 0
-
-def test_set_val_of_array():
-    a = array(int, 1)
     a[0] = 1
     assert a[0] == 1
 
