@@ -8,23 +8,23 @@ def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> list[int]:
 def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> list[int]:
     """O(m+n)"""
     rtn = []
-    part1 = nums1[:m]
+    part1 = nums1[:m] # O(m)
 
     m_i, n_i = 0, 0
 
-    while m_i + n_i < m + n:
+    while m_i + n_i < m + n: # O(m + n)
         if m_i < m and n_i < n:
             if part1[m_i] < nums2[n_i]:
-                rtn.append(part1[m_i])
+                rtn.append(part1[m_i]) # O(1)
                 m_i += 1
             else:
-                rtn.append(nums2[n_i])
+                rtn.append(nums2[n_i]) # O(1)
                 n_i += 1
         elif m_i < m:
-            rtn.append(part1[m_i])
+            rtn.append(part1[m_i]) # O(1)
             m_i += 1
         elif n_i < n:
-            rtn.append(nums2[n_i])
+            rtn.append(nums2[n_i]) # O(1)
             n_i += 1
 
     return rtn
