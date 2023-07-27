@@ -3,12 +3,14 @@ import pytest
 from collections import defaultdict, Counter
 
 def func(strs: list[str]) -> list[list[str]]:
+    """O(n(k log k)) where k = avg(len(s) for s in strs)), n = len(strs)"""
     groups = defaultdict(list)
 
     for s in strs:
         ss = "".join(sorted(s))
+        # ss = tuple(sorted(Counter(s).items()))
 
-        groups[ss].append(s)
+        groups[ss].append(s) # O(1)
 
     return list(groups.values())
 
