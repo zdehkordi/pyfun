@@ -1,7 +1,7 @@
 import pytest
 
-def func():
+def func(
     pass
 
 def test_():
-    assert True
+    assert func() == 
