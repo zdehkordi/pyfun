@@ -32,7 +32,7 @@ def func(nums: list[int]) -> list[int]:
     return [(pre[i-1] if i-1 >= 0 else 1) * (post[i+1] if i+1 <= n-1 else 1) for i in range(n)]
         
 def func(nums: list[int]) -> list[int]:
-    """O(n)"""
+    """O(n), O(1), genius"""
     ans, suf, pre = [1]*len(nums), 1, 1
     for i in range(len(nums)):
         ans[i] *= pre               # prefix product from one end
@@ -43,6 +43,7 @@ def func(nums: list[int]) -> list[int]:
 
 
 def test_():
+    """[1 * 2*3*4, 1 *3*4, 1*2 * 4, 1*2*3 * 1]"""
     nums = [1,2,3,4]
     assert func(nums) == [24,12,8,6]
 
